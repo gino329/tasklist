@@ -51,8 +51,9 @@ class TasksController extends Controller
 
         $task = new Tasks;
         $task->content = $request->content;
+        $task->status = $request->status;  
         $task->save();
-        $task->title = $request->title;  
+
         return redirect('/');
     }
 
