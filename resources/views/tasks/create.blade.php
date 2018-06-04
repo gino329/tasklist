@@ -2,18 +2,27 @@
 
 @section('content')
 
-  <h1>Tasklist新規作成ページ</h1>
+<h1>Tasklist新規作成ページ</h1>
 
-    {!! Form::model($task, ['route' => 'tasks.store']) !!}
-    
-        {!! Form::label('title', 'タイトル:') !!}
-        {!! Form::text('title') !!}
+    @if (count($errors) > 0)
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    @endif
 
-        {!! Form::label('content', 'Task:') !!}
+    {!! Form::model($message, ['route' => 'messages.store']) !!}
+
+        {!! Form::label('status', 'ステータス:') !!}
+        {!! Form::text(status) !!}
+
+        {!! Form::label('content', 'メッセージ:') !!}
         {!! Form::text('content') !!}
 
         {!! Form::submit('投稿') !!}
 
-        {!! Form::close() !!}
+    {!! Form::close() !!}
+    
         
 @endsection
