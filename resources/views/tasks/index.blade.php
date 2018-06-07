@@ -26,6 +26,6 @@
 
     @endif
     
-  {!! link_to_route('tasks.create', '新規メッセージの投稿', null, ['class' => 'btn btn-primary']) !!}
+  {!! link_to_route('tasks.create', '新規Tasklistの投稿', null, ['class' => 'btn btn-primary']) !!}
 @endsection
 
