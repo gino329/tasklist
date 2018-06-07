@@ -23,6 +23,6 @@
 
     {!! Form::close() !!}
     
- </div><!--/.col-xs>
-</div><!--/.row>
+ </div>
+</div>
 @endsection
