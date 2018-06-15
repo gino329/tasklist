@@ -13,12 +13,15 @@
 
 Route::get('/', 'TasksController@index');
 
+// omit
+
+Route::group(['middleware' => 'auth'], function () {
+Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
+Route::resource('tasks', 'TasksController', ['only' => ['store', 'destroy']]);
+});
+
 Route::resource('tasks', 'TasksController'); 
 
-// toppage
-Route::get('/', function () {
-    return view('welcome');
-});
 
 // Login authentication
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
